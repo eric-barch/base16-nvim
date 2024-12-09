@@ -1,10 +1,3 @@
--- Some useful links for making your own colorscheme:
---
--- https://github.com/chriskempson/base16
--- https://colourco.de/
--- https://color.adobe.com/create/color-wheel
--- http://vrl.cs.brown.edu/color
-
 local M = {}
 local hex_re = vim.regex("#\\x\\x\\x\\x\\x\\x")
 
@@ -52,17 +45,6 @@ local function darken(hex, pct)
 	return string.format("#%s", rgb_to_hex(r, g, b))
 end
 
--- This is a bit of syntactic sugar for creating highlight groups.
---
--- local colorscheme = require('colorscheme')
--- local hi = colorscheme.highlight
--- hi.Comment = { guifg='#ffffff', guibg='#000000', gui='italic', guisp=nil }
--- hi.LspDiagnosticsDefaultError = 'DiagnosticError' -- Link to another group
---
--- This is equivalent to the following vimscript
---
--- hi Comment guifg=#ffffff guibg=#000000 gui=italic
--- hi! link LspDiagnosticsDefaultError DiagnosticError
 M.highlight = setmetatable({}, {
 	__newindex = function(_, hlgroup, args)
 		if "string" == type(args) then
@@ -105,7 +87,6 @@ function M.with_config(config)
 		telescope_borders = false,
 		indentblankline = true,
 		notify = true,
-		ts_rainbow = true,
 		cmp = true,
 		illuminate = true,
 		lsp_semantic = true,
@@ -114,24 +95,6 @@ function M.with_config(config)
 	}, config or M.config or {})
 end
 
---- Creates a base16 colorscheme using the colors specified.
---
--- Builtin colorschemes can be found in the M.colorschemes table.
---
--- The default Vim highlight groups (including User[1-9]), highlight groups
--- pertaining to Neovim's builtin LSP, and highlight groups pertaining to
--- Treesitter will be defined.
---
--- It's worth noting that many colorschemes will specify language specific
--- highlight groups like rubyConstant or pythonInclude. However, I don't do
--- that here since these should instead be linked to an existing highlight
--- group.
---
--- @param colors (table) table with keys 'base00', 'base01', 'base02',
---   'base03', 'base04', 'base05', 'base06', 'base07', 'base08', 'base09',
---   'base0A', 'base0B', 'base0C', 'base0D', 'base0E', 'base0F'. Each key should
---   map to a valid 6 digit hex color. If a string is provided, the
---   corresponding table specifying the colorscheme will be used.
 function M.setup(colors, config)
 	M.with_config(config)
 
@@ -143,16 +106,10 @@ function M.setup(colors, config)
 		vim.cmd("syntax reset")
 	end
 
-	-- BASE16_THEME in a tmux session cannot be trusted because of how envs in tmux panes work.
-	local base16_colorscheme = nil
-	if vim.env.TMUX == nil and vim.env.BASE16_THEME ~= nil then
-		-- Only trust BASE16_THEME if not inside a tmux pane:
-		base16_colorscheme = M.colorschemes[vim.env.BASE16_THEME]
-	end
-	M.colors = colors or base16_colorscheme or M.colorschemes["schemer-dark"]
+	M.colors = colors
 	local hi = M.highlight
 
-	-- Vim editor colors
+	-- Editor
 	hi.Normal = {
 		guifg = M.colors.base05,
 		guibg = M.colors.base00,
@@ -376,7 +333,7 @@ function M.setup(colors, config)
 		ctermbg = M.colors.cterm01,
 	}
 
-	-- Standard syntax highlighting
+	-- Standard syntax
 	hi.Boolean =
 		{ guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.Character =
@@ -437,7 +394,7 @@ function M.setup(colors, config)
 	hi.Typedef =
 		{ guifg = M.colors.base0A, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0A, ctermbg = nil }
 
-	-- Diff highlighting
+	-- Diff
 	hi.DiffAdd = {
 		guifg = M.colors.base0B,
 		guibg = M.colors.base00,
@@ -511,7 +468,7 @@ function M.setup(colors, config)
 		ctermbg = M.colors.cterm00,
 	}
 
-	-- Git highlighting
+	-- Git
 	hi.gitcommitOverflow =
 		{ guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.gitcommitSummary =
@@ -543,7 +500,7 @@ function M.setup(colors, config)
 	hi.gitcommitSelectedFile =
 		{ guifg = M.colors.base0B, guibg = nil, gui = "bold", guisp = nil, ctermfg = M.colors.cterm0B, ctermbg = nil }
 
-	-- GitGutter highlighting
+	-- GitGutter
 	hi.GitGutterAdd = {
 		guifg = M.colors.base0B,
 		guibg = M.colors.base00,
@@ -577,7 +534,7 @@ function M.setup(colors, config)
 		ctermbg = M.colors.cterm00,
 	}
 
-	-- Spelling highlighting
+	-- Spelling
 	hi.SpellBad = { guifg = nil, guibg = nil, gui = "undercurl", guisp = M.colors.base08, ctermfg = nil, ctermbg = nil }
 	hi.SpellLocal =
 		{ guifg = nil, guibg = nil, gui = "undercurl", guisp = M.colors.base0C, ctermfg = nil, ctermbg = nil }
@@ -859,16 +816,6 @@ function M.setup(colors, config)
 		hi["@markup.link.url"] = "@text.uri"
 		hi["@markup.link.label"] = "@string.special"
 		hi["@markup.list"] = "@punctuation.special"
-	end
-
-	if M.config.ts_rainbow then
-		hi.rainbowcol1 = { guifg = M.colors.base06, ctermfg = M.colors.cterm06 }
-		hi.rainbowcol2 = { guifg = M.colors.base09, ctermfg = M.colors.cterm09 }
-		hi.rainbowcol3 = { guifg = M.colors.base0A, ctermfg = M.colors.cterm0A }
-		hi.rainbowcol4 = { guifg = M.colors.base07, ctermfg = M.colors.cterm07 }
-		hi.rainbowcol5 = { guifg = M.colors.base0C, ctermfg = M.colors.cterm0C }
-		hi.rainbowcol6 = { guifg = M.colors.base0D, ctermfg = M.colors.cterm0D }
-		hi.rainbowcol7 = { guifg = M.colors.base0E, ctermfg = M.colors.cterm0E }
 	end
 
 	hi.NvimInternalError = {
@@ -1385,70 +1332,6 @@ setmetatable(M.colorschemes, {
 		return t[key]
 	end,
 })
-
--- #16161D is called eigengrau and is kinda-ish the color your see when you
--- close your eyes. It makes for a really good background.
-M.colorschemes["schemer-dark"] = {
-	base00 = "#16161D",
-	base01 = "#3e4451",
-	base02 = "#2c313c",
-	base03 = "#565c64",
-	base04 = "#6c7891",
-	base05 = "#abb2bf",
-	base06 = "#9a9bb3",
-	base07 = "#c5c8e6",
-	base08 = "#e06c75",
-	base09 = "#d19a66",
-	base0A = "#e5c07b",
-	base0B = "#98c379",
-	base0C = "#56b6c2",
-	base0D = "#0184bc",
-	base0E = "#c678dd",
-	base0F = "#a06949",
-}
-M.colorschemes["schemer-medium"] = {
-	base00 = "#212226",
-	base01 = "#3e4451",
-	base02 = "#2c313c",
-	base03 = "#565c64",
-	base04 = "#6c7891",
-	base05 = "#abb2bf",
-	base06 = "#9a9bb3",
-	base07 = "#c5c8e6",
-	base08 = "#e06c75",
-	base09 = "#d19a66",
-	base0A = "#e5c07b",
-	base0B = "#98c379",
-	base0C = "#56b6c2",
-	base0D = "#0184bc",
-	base0E = "#c678dd",
-	base0F = "#a06949",
-}
-
-M.load_from_shell = function()
-	-- tinted-theming/base16-shell uses XDG_CONFIG_PATH if present.
-	local config_dir = vim.env.XDG_CONFIG_HOME
-	if config_dir == nil or config_dir == "" then
-		config_dir = "~/.config"
-	end
-
-	local shell_theme_paths = {
-		-- tinted-theming/base16-shell writes this file
-		config_dir .. "/tinted-theming/set_theme.lua",
-		-- chriskempson/base16-shell writes this file
-		"~/.vimrc_background",
-	}
-
-	for _, path in pairs(shell_theme_paths) do
-		local is_readable = vim.fn.filereadable(vim.fn.expand(path)) == 1
-		if is_readable then
-			vim.cmd([[let base16colorspace=256]])
-			vim.cmd("source " .. path)
-			return path
-		end
-	end
-	return false
-end
 
 return M
 
