@@ -276,11 +276,11 @@ function M.setup(colors, config)
 	hi.NonText =
 		{ guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm03, ctermbg = nil }
 	hi.LineNr = {
-		guifg = M.colors.base04,
+		guifg = M.colors.base02,
 		guibg = M.colors.base00,
 		gui = nil,
 		guisp = nil,
-		ctermfg = M.colors.cterm04,
+		ctermfg = M.colors.cterm02,
 		ctermbg = M.colors.cterm00,
 	}
 	hi.SignColumn = {
@@ -326,11 +326,11 @@ function M.setup(colors, config)
 	hi.CursorLine =
 		{ guifg = nil, guibg = M.colors.base01, gui = "none", guisp = nil, ctermfg = nil, ctermbg = M.colors.cterm01 }
 	hi.CursorLineNr = {
-		guifg = M.colors.base04,
+		guifg = M.colors.base02,
 		guibg = M.colors.base01,
 		gui = nil,
 		guisp = nil,
-		ctermfg = M.colors.cterm04,
+		ctermfg = M.colors.cterm02,
 		ctermbg = M.colors.cterm01,
 	}
 	hi.QuickFixLine =
@@ -382,7 +382,7 @@ function M.setup(colors, config)
 	hi.Character =
 		{ guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.Comment =
-		{ guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm03, ctermbg = nil }
+		{ guifg = M.colors.base04, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm04, ctermbg = nil }
 	hi.Conditional =
 		{ guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.Constant =
@@ -628,9 +628,9 @@ function M.setup(colors, config)
 	hi.TSCharacter =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSComment =
-		{ guifg = M.colors.base03, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm03, ctermbg = nil }
+		{ guifg = M.colors.base04, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm04, ctermbg = nil }
 	hi.TSConstructor =
-		{ guifg = M.colors.base0D, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0D, ctermbg = nil }
+		{ guifg = M.colors.base0F, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
 	hi.TSConditional =
 		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSConstant =
@@ -650,7 +650,7 @@ function M.setup(colors, config)
 	hi.TSFunction =
 		{ guifg = M.colors.base0D, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0D, ctermbg = nil }
 	hi.TSFuncBuiltin =
-		{ guifg = M.colors.base0D, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm0D, ctermbg = nil }
+		{ guifg = M.colors.base09, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.TSFuncMacro =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSInclude =
@@ -678,7 +678,7 @@ function M.setup(colors, config)
 	hi.TSParameterReference =
 		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSProperty =
-		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
+		{ guifg = M.colors.base07, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm07, ctermbg = nil }
 	hi.TSPunctDelimiter =
 		{ guifg = M.colors.base0F, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
 	hi.TSPunctBracket =
@@ -791,6 +791,7 @@ function M.setup(colors, config)
 		hi["@type.builtin"] = "TSTypeBuiltin"
 		hi["@type.qualifier"] = "TSKeyword"
 		hi["@type.definition"] = "TSType"
+		hi["@lsp.typemod.function.defaultLibrary"] = "TSFuncBuiltin"
 		hi["@storageclass"] = "StorageClass"
 		hi["@attribute"] = "TSAttribute"
 		hi["@field"] = "TSField"
@@ -823,7 +824,6 @@ function M.setup(colors, config)
 		hi["@tag"] = "TSTag"
 		hi["@tag.attribute"] = "TSAttribute"
 		hi["@tag.delimiter"] = "TSTagDelimiter"
-
 		hi["@function.method"] = "@method"
 		hi["@function.method.call"] = "@method.call"
 		hi["@comment.error"] = "@text.danger"
@@ -1451,3 +1451,5 @@ M.load_from_shell = function()
 end
 
 return M
+
+-- vim: ts=2 sts=2 sw=2 et
