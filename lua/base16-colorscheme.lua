@@ -233,11 +233,11 @@ function M.setup(colors, config)
 	hi.NonText =
 		{ guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm03, ctermbg = nil }
 	hi.LineNr = {
-		guifg = M.colors.base02,
+		guifg = M.colors.base03,
 		guibg = M.colors.base00,
 		gui = nil,
 		guisp = nil,
-		ctermfg = M.colors.cterm02,
+		ctermfg = M.colors.cterm03,
 		ctermbg = M.colors.cterm00,
 	}
 	hi.SignColumn = {
@@ -283,11 +283,11 @@ function M.setup(colors, config)
 	hi.CursorLine =
 		{ guifg = nil, guibg = M.colors.base01, gui = "none", guisp = nil, ctermfg = nil, ctermbg = M.colors.cterm01 }
 	hi.CursorLineNr = {
-		guifg = M.colors.base02,
+		guifg = M.colors.base03,
 		guibg = M.colors.base01,
 		gui = nil,
 		guisp = nil,
-		ctermfg = M.colors.cterm02,
+		ctermfg = M.colors.cterm03,
 		ctermbg = M.colors.cterm01,
 	}
 	hi.QuickFixLine =
