@@ -1,16 +1,23 @@
-# Import Latest Base16 Schemes
+# Generate Colorschemes with Latest Base16 Schemes
 
-A simple script to import the latest Base16 Schemes. Requirements were made as
-light as possible.
+Using [tinted-builder-rust](https://github.com/tinted-theming/tinted-builder-rust), pulls the latest base16 schemes & generate the colorschemes.
 
 ## Requirements
 
-* curl
-* git
-* zsh
+* `tinted-builder-rust`
+* `git`
+* `zsh`
+* **GNU** `sed`
+* `awk`
+* `sort`
 
-## How Does it Work
+## macOS
 
-The script pulls the latest _schemas.yaml_ for Base16 and then pulls down each
-specified git repo. Using the scheme values for **base00** -> **base0F**, it
-generates the colorscheme lua or vimls wrapper files.
+macOS comes with a version of `sed` that is not compatible with GNU `sed`. There are the steps to run this script with
+to get the correct results:
+
+```sh
+brew install gnu-sed
+SED_COMMAND=gsed tools/build.zsh
+```
+
