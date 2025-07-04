@@ -7,20 +7,16 @@ M.highlight = setmetatable({}, {
 			return
 		end
 
-		local guifg, guibg, gui, guisp = args.guifg or nil, args.guibg or nil, args.gui or nil, args.guisp or nil
+		local guifg, guibg, guisp, gui = args.guifg or nil, args.guibg or nil, args.guisp or nil, args.gui or nil
 		local ctermfg, ctermbg = args.ctermfg or nil, args.ctermbg or nil
+
 		local val = {}
+
 		if guifg then
 			val.fg = guifg
 		end
 		if guibg then
 			val.bg = guibg
-		end
-		if ctermfg then
-			val.ctermfg = ctermfg
-		end
-		if ctermbg then
-			val.ctermbg = ctermbg
 		end
 		if guisp then
 			val.sp = guisp
@@ -32,6 +28,14 @@ M.highlight = setmetatable({}, {
 				end
 			end
 		end
+
+		if ctermfg then
+			val.ctermfg = ctermfg
+		end
+		if ctermbg then
+			val.ctermbg = ctermbg
+		end
+
 		vim.api.nvim_set_hl(0, hlgroup, val)
 	end,
 })
