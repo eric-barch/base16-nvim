@@ -586,9 +586,9 @@ function M.setup(colors, config)
 	hi.TSOperator =
 		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSParameter =
-		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
+		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSParameterReference =
-		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
+		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSProperty =
 		{ guifg = M.colors.base07, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm07, ctermbg = nil }
 	hi.TSPunctDelimiter =
