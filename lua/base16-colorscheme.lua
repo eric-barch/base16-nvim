@@ -44,11 +44,8 @@ function M.with_config(config)
 	M.config = vim.tbl_extend("force", {
 		telescope = true,
 		indentblankline = true,
-		notify = true,
 		cmp = true,
-		illuminate = true,
 		lsp_semantic = true,
-		mini_completion = true,
 		dapui = true,
 	}, config or M.config or {})
 end
@@ -915,134 +912,6 @@ function M.setup(colors, config)
 		hi.TelescopePreviewLine = { guifg = nil, guibg = M.colors.base01, gui = "none", guisp = nil }
 	end
 
-	if M.config.notify then
-		hi.NotifyERRORBorder = {
-			guifg = M.colors.base08,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm08,
-			ctermbg = nil,
-		}
-		hi.NotifyWARNBorder = {
-			guifg = M.colors.base0E,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0E,
-			ctermbg = nil,
-		}
-		hi.NotifyINFOBorder = {
-			guifg = M.colors.base05,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm05,
-			ctermbg = nil,
-		}
-		hi.NotifyDEBUGBorder = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyTRACEBorder = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyERRORIcon = {
-			guifg = M.colors.base08,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm08,
-			ctermbg = nil,
-		}
-		hi.NotifyWARNIcon = {
-			guifg = M.colors.base0E,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0E,
-			ctermbg = nil,
-		}
-		hi.NotifyINFOIcon = {
-			guifg = M.colors.base05,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm05,
-			ctermbg = nil,
-		}
-		hi.NotifyDEBUGIcon = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyTRACEIcon = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyERRORTitle = {
-			guifg = M.colors.base08,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm08,
-			ctermbg = nil,
-		}
-		hi.NotifyWARNTitle = {
-			guifg = M.colors.base0E,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0E,
-			ctermbg = nil,
-		}
-		hi.NotifyINFOTitle = {
-			guifg = M.colors.base05,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm05,
-			ctermbg = nil,
-		}
-		hi.NotifyDEBUGTitle = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyTRACETitle = {
-			guifg = M.colors.base0C,
-			guibg = nil,
-			gui = "none",
-			guisp = nil,
-			ctermfg = M.colors.cterm0C,
-			ctermbg = nil,
-		}
-		hi.NotifyERRORBody = "Normal"
-		hi.NotifyWARNBody = "Normal"
-		hi.NotifyINFOBody = "Normal"
-		hi.NotifyDEBUGBody = "Normal"
-		hi.NotifyTRACEBody = "Normal"
-	end
-
 	if M.config.indentblankline then
 		hi.IndentBlanklineChar = { guifg = M.colors.base02, gui = "nocombine", ctermfg = M.colors.cterm02 }
 		hi.IndentBlanklineContextChar = { guifg = M.colors.base04, gui = "nocombine", ctermfg = M.colors.cterm04 }
@@ -1136,15 +1005,6 @@ function M.setup(colors, config)
 			{ guifg = M.colors.base04, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm04, ctermbg = nil }
 	end
 
-	if M.config.illuminate then
-		hi.IlluminatedWordText =
-			{ guifg = nil, guibg = nil, gui = "underline", guisp = M.colors.base04, ctermfg = nil, ctermbg = nil }
-		hi.IlluminatedWordRead =
-			{ guifg = nil, guibg = nil, gui = "underline", guisp = M.colors.base04, ctermfg = nil, ctermbg = nil }
-		hi.IlluminatedWordWrite =
-			{ guifg = nil, guibg = nil, gui = "underline", guisp = M.colors.base04, ctermfg = nil, ctermbg = nil }
-	end
-
 	if M.config.lsp_semantic then
 		hi["@class"] = "TSType"
 		hi["@struct"] = "TSType"
@@ -1171,10 +1031,6 @@ function M.setup(colors, config)
 		hi["@lsp.type.method"] = "@method"
 		hi["@lsp.type.macro"] = "@function.macro"
 		hi["@lsp.type.decorator"] = "@function"
-	end
-
-	if M.config.mini_completion then
-		hi.MiniCompletionActiveParameter = "CursorLine"
 	end
 
 	if M.config.dapui then
