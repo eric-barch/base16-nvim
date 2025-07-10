@@ -649,9 +649,9 @@ function M.setup(colors, config)
 	hi.TSTypeBuiltin =
 		{ guifg = M.colors.base0A, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm0A, ctermbg = nil }
 	hi.TSVariable =
-		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
+		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSVariableBuiltin =
-		{ guifg = M.colors.base08, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
+		{ guifg = M.colors.base05, guibg = nil, gui = "italic", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 
 	hi.TSDefinition =
 		{ guifg = nil, guibg = nil, gui = "underline", guisp = M.colors.base04, ctermfg = nil, ctermbg = nil }
