@@ -310,7 +310,7 @@ function M.setup(colors, config)
 	hi.Identifier =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.Include =
-		{ guifg = M.colors.base0D, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0D, ctermbg = nil }
+		{ guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.Keyword =
 		{ guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.Label =
@@ -566,7 +566,7 @@ function M.setup(colors, config)
 	hi.TSFuncMacro =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSInclude =
-		{ guifg = M.colors.base0D, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0D, ctermbg = nil }
+		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSKeyword =
 		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSKeywordFunction =
