@@ -608,7 +608,7 @@ function M.setup(colors, config)
 	hi.TSSymbol =
 		{ guifg = M.colors.base0B, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0B, ctermbg = nil }
 	hi.TSTag =
-		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
+		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSTagDelimiter =
 		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSText =
