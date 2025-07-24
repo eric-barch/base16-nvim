@@ -318,7 +318,7 @@ function M.setup(colors, config)
 	hi.Number =
 		{ guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.Operator =
-		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.PreProc =
 		{ guifg = M.colors.base0A, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0A, ctermbg = nil }
 	hi.Repeat =
@@ -572,7 +572,7 @@ function M.setup(colors, config)
 	hi.TSKeywordFunction =
 		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSKeywordOperator =
-		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSLabel =
 		{ guifg = M.colors.base0A, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0A, ctermbg = nil }
 	hi.TSMethod =
@@ -584,7 +584,7 @@ function M.setup(colors, config)
 	hi.TSNumber =
 		{ guifg = M.colors.base09, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.TSOperator =
-		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSParameter =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSParameterReference =
