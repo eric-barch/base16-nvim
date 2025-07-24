@@ -53,10 +53,6 @@ end
 function M.setup(colors, config)
 	M.with_config(config)
 
-	if type(colors) == "string" then
-		colors = M.colorschemes[colors]
-	end
-
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
 	end
@@ -1113,18 +1109,6 @@ function M.setup(colors, config)
 	vim.g.base16_gui0E = M.colors.base0E
 	vim.g.base16_gui0F = M.colors.base0F
 end
-
-function M.available_colorschemes()
-	return vim.tbl_keys(M.colorschemes)
-end
-
-M.colorschemes = {}
-setmetatable(M.colorschemes, {
-	__index = function(t, key)
-		t[key] = require(string.format("colors.%s", key))
-		return t[key]
-	end,
-})
 
 return M
 
