@@ -534,7 +534,7 @@ function M.setup(colors, config)
 	hi.TSAnnotation =
 		{ guifg = M.colors.base0F, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
 	hi.TSAttribute =
-		{ guifg = M.colors.base0A, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0A, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSBoolean =
 		{ guifg = M.colors.base09, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.TSCharacter =
