@@ -302,7 +302,7 @@ function M.setup(colors, config)
 	hi.Define =
 		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.Delimiter =
-		{ guifg = M.colors.base0F, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.Float =
 		{ guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm09, ctermbg = nil }
 	hi.Function =
@@ -592,7 +592,7 @@ function M.setup(colors, config)
 	hi.TSProperty =
 		{ guifg = M.colors.base07, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm07, ctermbg = nil }
 	hi.TSPunctDelimiter =
-		{ guifg = M.colors.base0F, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSPunctBracket =
 		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSPunctSpecial =
@@ -610,7 +610,7 @@ function M.setup(colors, config)
 	hi.TSTag =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSTagDelimiter =
-		{ guifg = M.colors.base0F, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0F, ctermbg = nil }
+		{ guifg = M.colors.base0C, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0C, ctermbg = nil }
 	hi.TSText =
 		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSStrong = { guifg = nil, guibg = nil, gui = "bold", guisp = nil, ctermfg = nil, ctermbg = nil }
