@@ -95,7 +95,7 @@ function M.setup(colors, config)
 		ctermbg = M.colors.cterm00,
 	}
 	hi.Exception =
-		{ guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
+		{ guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.FoldColumn = {
 		guifg = M.colors.base0C,
 		guibg = M.colors.base00,
@@ -554,7 +554,7 @@ function M.setup(colors, config)
 	hi.TSError =
 		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
 	hi.TSException =
-		{ guifg = M.colors.base08, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm08, ctermbg = nil }
+		{ guifg = M.colors.base0E, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm0E, ctermbg = nil }
 	hi.TSField =
 		{ guifg = M.colors.base05, guibg = nil, gui = "none", guisp = nil, ctermfg = M.colors.cterm05, ctermbg = nil }
 	hi.TSFloat =
